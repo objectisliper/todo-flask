@@ -1,0 +1,20 @@
+<ul>
+{% for note in notes %}
+    <li style="background: aliceblue; padding: 5px 10px; margin-top: 5px; border: 1px solid black;">
+        <h1>{{ note.name }}</h1>
+        <p>{{ note.description }}</p>
+        <a href="/delete/{{ note.id }}">Delete</a>
+    </li>
+{% endfor %}
+</ul>
+
+
+<form action="/task" method="post">
+    <label>Name:
+        <input type="text" name="name">
+    </label>
+    <label>Description:
+        <input type="text" name="description">
+    </label>
+    <input type="submit" value="Add note">
+</form>
